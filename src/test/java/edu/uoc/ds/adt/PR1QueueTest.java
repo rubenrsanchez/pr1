@@ -11,8 +11,8 @@ public class PR1QueueTest {
     PR1Queue pr1q;
 
     private void fillQueue() {
-        for (int c = 0; c < 9; c++) {
-            pr1q.add(c);
+        for (Integer c = 0; c < 15; c++) {
+            pr1q.add(c*c+3*c+2);
 
         }
     }
@@ -32,12 +32,10 @@ public class PR1QueueTest {
 
     @org.junit.Test
     public void queueTest() {
-        assertEquals(this.pr1q.CAPACITY-1, this.pr1q.getQueue().size());
-        Integer funcion2;
+        assertEquals(this.pr1q.CAPACITY, this.pr1q.getQueue().size());
+        //lo relleno con un for para ahorrar lineas de codigo
         for (int i =0; i<pr1q.CAPACITY ; i++) {
-            funcion2 = i*i+3*i+2;
-
-            Assert.assertEquals(funcion2, pr1q.poll());
+           Assert.assertEquals((Integer) Funcion.funcion(i), pr1q.poll());
         }
 
         assertEquals(0, this.pr1q.getQueue().size());

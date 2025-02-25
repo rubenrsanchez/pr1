@@ -12,8 +12,8 @@ public class PR1StackTest {
     PR1Stack pr1q;
 
     private void fillStack() {
-        for (Integer c = 0; c < 9; c++) {
-            pr1q.push(Integer.valueOf(c));
+        for (Integer c = 0; c < 15; c++) {
+            pr1q.push(c*c+c*3+2);
         }
     }
 
@@ -35,12 +35,11 @@ public class PR1StackTest {
     @org.junit.Test
     public void stackTest() {
 
-        assertEquals(this.pr1q.CAPACITY-1, this.pr1q.getStack().size());
-        Integer funcion;
+        assertEquals(this.pr1q.CAPACITY, this.pr1q.getStack().size());
+        //lo relleno con un for para ahorrar lineas de codigo
         for (int i =pr1q.CAPACITY-1; i>=0 ; i--) {
-            funcion = i*i+3*i+2;
 
-            Assert.assertEquals(funcion, pr1q.pop());
+            Assert.assertEquals ((Integer) Funcion.funcion(i), pr1q.pop());
         }
 
         assertEquals(0, this.pr1q.getStack().size());
