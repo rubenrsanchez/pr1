@@ -8,7 +8,7 @@ public class PR1Queue {
 
     public final int CAPACITY = 10;
 
-    private Queue<Character> queue;
+    private Queue<Integer> queue;
 
     public PR1Queue() {
         newQueue();
@@ -17,15 +17,15 @@ public class PR1Queue {
         queue = new QueueArrayImpl<>(CAPACITY);
     }
 
-    public Queue<Character> getQueue() {
+    public Queue<Integer> getQueue() {
         return this.queue;
     }
 
-    public void add(Character c) {
+    public void add(Integer c) {
         this.queue.add(c);
     }
 
-    public Character poll() {
+    public Integer poll() {
         return this.queue.poll();
     }
 }

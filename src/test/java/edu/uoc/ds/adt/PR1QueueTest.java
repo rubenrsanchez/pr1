@@ -11,8 +11,8 @@ public class PR1QueueTest {
     PR1Queue pr1q;
 
     private void fillQueue() {
-        for (char c = '0'; c < '9'; c++) {
-            pr1q.add(Character.valueOf(c));
+        for (int c = 0; c < 9; c++) {
+            pr1q.add(c);
 
         }
     }
@@ -33,15 +33,13 @@ public class PR1QueueTest {
     @org.junit.Test
     public void queueTest() {
         assertEquals(this.pr1q.CAPACITY-1, this.pr1q.getQueue().size());
-        Assert.assertEquals(new Character('0'), pr1q.poll());
-        Assert.assertEquals(new Character('1'), pr1q.poll());
-        Assert.assertEquals(new Character('2'), pr1q.poll());
-        Assert.assertEquals(new Character('3'), pr1q.poll());
-        Assert.assertEquals(new Character('4'), pr1q.poll());
-        Assert.assertEquals(new Character('5'), pr1q.poll());
-        Assert.assertEquals(new Character('6'), pr1q.poll());
-        Assert.assertEquals(new Character('7'), pr1q.poll());
-        Assert.assertEquals(new Character('8'), pr1q.poll());
+        Integer funcion2;
+        for (int i =0; i<pr1q.CAPACITY ; i++) {
+            funcion2 = i*i+3*i+2;
+
+            Assert.assertEquals(funcion2, pr1q.poll());
+        }
+
         assertEquals(0, this.pr1q.getQueue().size());
     }
 

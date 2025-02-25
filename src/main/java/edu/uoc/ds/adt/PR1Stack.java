@@ -7,25 +7,25 @@ import edu.uoc.ds.adt.sequential.StackArrayImpl;
 public class PR1Stack {
     public final int CAPACITY = 10;
 
-    private Stack<Character> stack;
+    private Stack<Integer> stack;
 
     public PR1Stack() {
         newStack();
     }
 
     public void newStack() {
-        stack = new StackArrayImpl<Character>(CAPACITY);
+        stack = new StackArrayImpl<Integer>(CAPACITY);
     }
 
-    public Stack<Character> getStack() {
+    public Stack<Integer> getStack() {
         return this.stack;
     }
 
-    public void push(Character c) {
+    public void push(Integer c) {
         this.stack.push(c);
     }
 
-    public Character pop() {
+    public Integer pop() {
         return this.stack.pop();
     }
 }
